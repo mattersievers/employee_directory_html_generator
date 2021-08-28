@@ -6,7 +6,8 @@ const Manager = require('./lib/Manager');
 
 class Directory{
     constructor(){
-
+        this.engineer = [];
+        this.intern = [];
     }
 
     promptTeamManager() {
@@ -48,7 +49,7 @@ class Directory{
                     case 'add Intern':
                         return this.promptIntern();
                     case 'or Complete the Team':
-                        return;
+                        return console.log(this);
                     default:
                         return console.log('whoops');
                 }
@@ -86,18 +87,18 @@ class Directory{
             }
         ])   
         .then(({name,id,email,github,moreEmployee}) =>{
-            this.engineer = new Engineer(name,id,email,github);
-
+            this.engineer.push(new Engineer(name,id,email,github));
+                
             switch(moreEmployee) {
                 case 'add Engineer':
                     return this.promptEngineer();
                 case 'add Intern':
                     return this.promptIntern();
                 case 'or Complete the Team':
-                    return;
+                    return console.log(this);
                 default:
                     return console.log('whoops');
-            }
+            }    
         })   
     }
 
@@ -131,7 +132,7 @@ class Directory{
             }
         ])   
         .then(({name,id,email,school,moreEmployee}) =>{
-            this.intern = new Intern(name,id,email,school);
+            this.intern.push(new Intern(name,id,email,school));
 
             switch(moreEmployee) {
                 case 'add Engineer':
@@ -139,7 +140,7 @@ class Directory{
                 case 'add Intern':
                     return this.promptIntern();
                 case 'or Complete the Team':
-                    return;
+                    return console.log(this);
                 default:
                     return console.log('whoops');
             }
