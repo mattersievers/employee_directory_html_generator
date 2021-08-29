@@ -1,13 +1,15 @@
 //include packages
 const inquirer = require('inquirer');
+const {writeFile, copyFile} = require('./src/generate-site')
+const generatePage = require('./src/page-template');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 
 class Directory{
     constructor(){
-        this.engineer = [];
-        this.intern = [];
+        this.engineers = [];
+        this.interns = [];
     }
 
     promptTeamManager() {
@@ -49,7 +51,7 @@ class Directory{
                     case 'add Intern':
                         return this.promptIntern();
                     case 'or Complete the Team':
-                        return console.log(this);
+                        return this.constructHTML();
                     default:
                         return console.log('whoops');
                 }
@@ -87,7 +89,7 @@ class Directory{
             }
         ])   
         .then(({name,id,email,github,moreEmployee}) =>{
-            this.engineer.push(new Engineer(name,id,email,github));
+            this.engineers.push(new Engineer(name,id,email,github));
                 
             switch(moreEmployee) {
                 case 'add Engineer':
@@ -95,7 +97,7 @@ class Directory{
                 case 'add Intern':
                     return this.promptIntern();
                 case 'or Complete the Team':
-                    return console.log(this);
+                    return this.constructHTML();
                 default:
                     return console.log('whoops');
             }    
@@ -132,7 +134,7 @@ class Directory{
             }
         ])   
         .then(({name,id,email,school,moreEmployee}) =>{
-            this.intern.push(new Intern(name,id,email,school));
+            this.interns.push(new Intern(name,id,email,school));
 
             switch(moreEmployee) {
                 case 'add Engineer':
@@ -140,12 +142,20 @@ class Directory{
                 case 'add Intern':
                     return this.promptIntern();
                 case 'or Complete the Team':
-                    return console.log(this);
+                    return this.constructHTML();
                 default:
                     return console.log('whoops');
             }
         })       
     }
+
+    constructHTML(){
+        console.log(generatePage(this));
+    }
+    
 }
 
-new Directory().promptTeamManager();
+let currentProject = new Directory();
+currentProject.promptTeamManager();
+
+
