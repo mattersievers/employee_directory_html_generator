@@ -7,12 +7,12 @@ const generateManager = manager => {
   <div class ="p-2 shadow border card" style="width: 18rem;">
     <div class = "bg-info text-white">
       <h2>${manager.name}</h2>
-      <h4><i class="fas fa-mug-hot"></i> Manager<h4>
+      <h4> <i class="fas fa-mug-hot"></i> Manager<h4>
     </div>  
     <div>
-      <div class = "border rounded">ID: ${manager.id}</div>
-      <div class = "border rounded">Email: ${manager.email}</div>
-      <div class = "border rounded">Office Number: ${manager.officeNumber}</div>
+      <div class = "border rounded"> ID: ${manager.id}</div>
+      <div class = "border rounded"><a href ="mailto:${manager.email}"> Email: ${manager.email}</a></div>
+      <div class = "border rounded"> Office Number: ${manager.officeNumber}</div>
     </div>
   </div>    
   `;
@@ -29,12 +29,12 @@ const generateEngineers = engineers => {
     <div class ="p-2 shadow border card" style="width: 18rem;">
       <div class = "bg-info text-white">
         <h2>${engineer.name}<h2>
-        <h4><i class="fas fa-glasses"></i> Engineer</h4>
+        <h4> <i class="fas fa-glasses"></i> Engineer</h4>
       </div>
       <div>
         <div class = "border rounded">ID: ${engineer.id}</div>
-        <div class = "border rounded">Email: ${engineer.email}</div>
-        <div class = "border rounded">GitHub: ${engineer.github}</div>
+        <div class = "border rounded"><a href ="mailto:${engineer.email}">Email: ${engineer.email}</a></div>
+        <div class = "border rounded"><a href = "http://www.github.com/${engineer.github}"> GitHub: ${engineer.github}</a></div>
       </div>
       
     </div>  

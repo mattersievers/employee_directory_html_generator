@@ -18,7 +18,7 @@ class Directory{
                 {
                     type:'text',
                     name: 'name',
-                    message:"What is the team manager's name?"
+                    message:"What is the team manager's name?",
                     validate: nameInput => {
                         if (nameInput) {
                             return true;    
@@ -26,21 +26,43 @@ class Directory{
                             console.log("Please enter a manager's name!");
                             return false;
                         }
+                    }    
                 },
                 {
                     type:'text',
                     name: 'id',
-                    message:"What is the team manager's id?"
+                    message:"What is the team manager's ID?",
+                    validate: idInput => {
+                        if(idInput){
+                            return true;
+                        } else {
+                            console.log("Please enter a number for the manager's ID.")
+                        }
+                    }
                 },
                 {
                     type:'text',
                     name: 'email',
-                    message:"What is the team manager's email?"
+                    message:"What is the team manager's email?",
+                    validate: emailInput => {
+                        if(emailInput){
+                            return true;
+                        } else {
+                            console.log("Please enter an email for the manager.")
+                        }
+                    }
                 },
                 {
                     type:'text',
                     name: 'officeNumber',
-                    message:"What is the team manager's office number?"
+                    message:"What is the team manager's office number?",
+                    validate: officeInput => {
+                        if(officeInput){
+                            return true;
+                        } else {
+                            console.log("Please enter an office number for the manager.")
+                        }
+                    }
                 },
                 {
                     type: 'list',
@@ -71,22 +93,51 @@ class Directory{
             {
                 type:'text',
                 name: 'name',
-                message:"What is the engineer's name?"
+                message:"What is the engineer's name?",
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;    
+                    } else{
+                        console.log("Please enter an engineer's name!");
+                        return false;
+                    }
+                }
             },
             {
                 type:'text',
                 name: 'id',
-                message:"What is the engineer's id?"
+                message:"What is the engineer's id?",
+                validate: idInput => {
+                    if(idInput){
+                        return true;
+                    } else {
+                        console.log("Please enter a number for the engineer's ID.")
+                    }
+                }
             },
             {
                 type:'text',
                 name: 'email',
-                message:"What is the engineer's email?"
+                message:"What is the engineer's email?",
+                validate: emailInput => {
+                    if(emailInput){
+                        return true;
+                    } else {
+                        console.log("Please enter an email for the engineer.")
+                    }
+                }
             },
             {
                 type:'text',
                 name: 'github',
-                message:"What is the engineer's github username?"
+                message:"What is the engineer's github username?",
+                validate: gitInput => {
+                    if(gitInput){
+                        return true;
+                    } else {
+                        console.log("Please enter a GitHub username for the engineer.")
+                    }
+                }
             },
             {
                 type: 'list',
@@ -116,22 +167,51 @@ class Directory{
             {
                 type:'text',
                 name: 'name',
-                message:"What is the intern's name?"
+                message:"What is the intern's name?",
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;    
+                    } else{
+                        console.log("Please enter an intern's name!");
+                        return false;
+                    }
+                }
             },
             {
                 type:'text',
                 name: 'id',
-                message:"What is the intern's id?"
+                message:"What is the intern's id?",
+                validate: idInput => {
+                    if(idInput){
+                        return true;
+                    } else {
+                        console.log("Please enter a number for the intern's ID.")
+                    }
+                }
             },
             {
                 type:'text',
                 name: 'email',
-                message:"What is the intern's email?"
+                message:"What is the intern's email?",
+                validate: emailInput => {
+                    if(emailInput){
+                        return true;
+                    } else {
+                        console.log("Please enter an email for the intern.")
+                    }
+                }
             },
             {
                 type:'text',
                 name: 'school',
-                message:"What is the intern's school?"
+                message:"What is the intern's school?",
+                validate: schoolInput => {
+                    if(schoolInput){
+                        return true;
+                    } else {
+                        console.log("Please enter a school for the intern.")
+                    }
+                }
             },
             {
                 type: 'list',
