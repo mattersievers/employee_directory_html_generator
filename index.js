@@ -19,6 +19,13 @@ class Directory{
                     type:'text',
                     name: 'name',
                     message:"What is the team manager's name?"
+                    validate: nameInput => {
+                        if (nameInput) {
+                            return true;    
+                        } else{
+                            console.log("Please enter a manager's name!");
+                            return false;
+                        }
                 },
                 {
                     type:'text',
@@ -150,8 +157,9 @@ class Directory{
     }
 
     constructHTML(){
-        console.log(generatePage(this));
-    }
+        writeFile(generatePage(this));
+        copyFile();
+    };
     
 }
 

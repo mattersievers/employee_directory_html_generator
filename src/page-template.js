@@ -4,39 +4,70 @@ const generateManager = manager => {
   } 
  
   return `
-  <div>
-    <div>
+  <div class ="p-2 shadow border card" style="width: 18rem;">
+    <div class = "bg-info text-white">
       <h2>${manager.name}</h2>
-      <h3>Manager<h3>
+      <h4><i class="fas fa-mug-hot"></i> Manager<h4>
     </div>  
     <div>
-      <div>ID: ${manager.id}</div>
-      <div>Email: ${manager.email}</div>
-      <div>Office Number: ${manager.officeNumber}</div>
+      <div class = "border rounded">ID: ${manager.id}</div>
+      <div class = "border rounded">Email: ${manager.email}</div>
+      <div class = "border rounded">Office Number: ${manager.officeNumber}</div>
     </div>
   </div>    
   `;
 };
 
 const generateEngineers = engineers => {
+  let tempScript = ``;
+
   engineers.forEach( (engineer) => {
     if(!engineer.name){
       return '';
     }
-
-    return `
-    ${[engineer.name,engineer.id,engineer.email,engineer.github]};
-    `
+    tempScript += `
+    <div class ="p-2 shadow border card" style="width: 18rem;">
+      <div class = "bg-info text-white">
+        <h2>${engineer.name}<h2>
+        <h4><i class="fas fa-glasses"></i> Engineer</h4>
+      </div>
+      <div>
+        <div class = "border rounded">ID: ${engineer.id}</div>
+        <div class = "border rounded">Email: ${engineer.email}</div>
+        <div class = "border rounded">GitHub: ${engineer.github}</div>
+      </div>
+      
+    </div>  
+    `  
   });
+  
+  return tempScript;
 };
 
 const generateInterns = interns => {
-  if(!interns.name){
-    return '';
-  }
-  return `
-  ${[interns.name, interns.id, interns.email, interns.school]};
-  `;
+  let tempScript = ``;
+
+  interns.forEach( (intern) => {
+    if(!intern.name){
+      return '';
+    }
+    tempScript += `
+    <div class ="p-2 shadow border card" style="width: 18rem;">
+      <div class = "bg-info text-white">
+        <h2>${intern.name}<h2>
+        <h4><i class="fas fa-user-graduate"></i> Intern</h4>
+      </div>
+      <div>
+        <div class = "border rounded">ID: ${intern.id}</div>
+        <div class = "border rounded">Email: ${intern.email}</div>
+        <div class = "border rounded">School: ${intern.school}</div>
+      </div>
+      
+    </div>  
+    `  
+  });
+  
+  return tempScript;
 };
 
 module.exports = templateData => {
@@ -50,27 +81,23 @@ module.exports = templateData => {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <title>Employee Directory</title>
-
+        <script src="https://kit.fontawesome.com/675b06116b.js" crossorigin="anonymous"></script>
     </head>
     
     <body>
     <header>
-      <div class="container flex-row justify-space-between align-center py-3">
-        <h1 class="page-title text-secondary bg-dark py-2 px-3">My Team</h1>
+      <div class="align-content-center d-flex justify-content-center">
+        <h1 class="text-white text-center bg-primary col-8">My Team</h1>
       </div>
     </header>
-    <main class="container my-5">
-    ${generateManager(manager)}
-    ${generateEngineers(engineers)}
-    ${generateInterns(interns)}
+    <main class="d-flex flex-wrap justify-content-around container col-8">
+      ${generateManager(manager)}
+      ${generateEngineers(engineers)}
+      ${generateInterns(interns)}
     </main>
-    <footer class="container text-center py-3">
-      <h3></h3>
-    </footer>
   </body>
   </html>
     `;
