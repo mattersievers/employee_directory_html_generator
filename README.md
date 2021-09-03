@@ -1,7 +1,6 @@
 
  
   # Employee Directory HTML Generator
-  []()
 
   ## Table of Contents
   * [Description](#description)
@@ -16,7 +15,8 @@
   This program takes in employee information for a specific manager and their team of engineers and interns. The program allows input of the manager's name, ID, email, and office number. It allows input of the engineer's name, id, email, and github username. It allows input of the intern's name, id, email, and shcool. The program returns an HTML template that allows the user to contact the employees through email or to visit gihub profiles where usernames are provided.
 
   ## Information
-  undefined
+  This program uses node.js to generate an HTML and correlating style sheet with an employee directory.
+  ![screenshot](assets/images/Screenshot.jpg)
 
   ## Install
    Ensure you have the latest Node.js installed. Run the command "npm init" and "npm install inquirer" in the command line of your terminal to install the appropriate packages. Use the command "node index" to initialize the program.
