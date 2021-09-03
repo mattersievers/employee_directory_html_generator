@@ -17,6 +17,7 @@
   ## Information
   This program uses node.js to generate an HTML and correlating style sheet with an employee directory.
   ![screenshot](assets/images/Screenshot.jpg)
+  [Link to walkthrough video](https://drive.google.com/file/d/1fJNfO4lAEGEOoQHwLY2RCMJ5fVS5ePqr/view?usp=sharing)
 
   ## Install
    Ensure you have the latest Node.js installed. Run the command "npm init" and "npm install inquirer" in the command line of your terminal to install the appropriate packages. Use the command "node index" to initialize the program.
