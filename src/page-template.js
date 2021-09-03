@@ -59,7 +59,7 @@ const generateInterns = interns => {
       </div>
       <div>
         <div class = "border rounded">ID: ${intern.id}</div>
-        <div class = "border rounded">Email: ${intern.email}</div>
+        <div class = "border rounded"><a href ="mailto:${intern.email}">Email: ${intern.email}</a></div>
         <div class = "border rounded">School: ${intern.school}</div>
       </div>
       
